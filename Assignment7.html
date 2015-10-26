@@ -3357,7 +3357,7 @@ NyYyYMyxBAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
@@ -3460,13 +3460,13 @@ NyYyYMyxBAAAAABJRU5ErkJggg==
     <span class="n">v_array</span><span class="p">[</span><span class="n">n_grid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_array</span><span class="p">[</span><span class="n">n_grid</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">first_time_step</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span><span class="n">g</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">ho</span><span class="p">,</span> <span class="n">gu</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">n_grid</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">first_time_step</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span><span class="n">g</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">ho</span><span class="p">,</span> <span class="n">gu_stagger</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">n_grid</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate the first time step values from the analytical</span>
 <span class="sd">    predictor-corrector derived from equations 4.18 and 4.19.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">u</span><span class="o">.</span><span class="n">now</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n_grid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">v</span><span class="o">.</span><span class="n">now</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n_grid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">factor</span> <span class="o">=</span> <span class="n">gu</span> <span class="o">*</span> <span class="n">ho</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="n">gu_stagger</span> <span class="o">*</span> <span class="n">ho</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">midpoint</span> <span class="o">=</span> <span class="n">n_grid</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="n">u</span><span class="o">.</span><span class="n">now</span><span class="p">[</span><span class="n">midpoint</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">factor</span>
     <span class="n">u</span><span class="o">.</span><span class="n">now</span><span class="p">[</span><span class="n">midpoint</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">factor</span>
@@ -3650,7 +3650,7 @@ n_grid = number of grid points; default = 9
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">rain</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span><span class="mi">19</span><span class="p">])</span>
@@ -6871,7 +6871,7 @@ SinlApqIK6WUUkop5QKaiCullFJKKeUCmogrpZRSSinlAv8PMwXi7dgv9XMAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">rain</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
@@ -9072,7 +9072,7 @@ TkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">rain</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
@@ -10278,7 +10278,7 @@ DeCEyAAAAABJRU5ErkJggg==
 </li>
 </ul>
 <ul>
-<li><p>The most accurate grids are unstaggered grid for water height h, staggered grid for u and v velocity respectively, which are:
+<li><p>The most accurate grids are staggered grid for the physical variables of this set of equation and it is written as:
   $\frac{u_i(t+dt) - u_i(t-dt)}{2dt} + g \frac{h_{i+1}(t) - h_i(t)}{dx} = 0$</p>
 <p>$\frac{h_i(t+dt) - h_i(t-dt)}{2dt} + H \frac{u_{i}(t) - u_{i-1}(t)}{dx} = 0$</p>
 <p>$\frac{v_i(t+dt) - v_i(t-dt)}{2dt} + f u_{i}(t) = 0$</p>
@@ -10293,7 +10293,7 @@ DeCEyAAAAABJRU5ErkJggg==
 <p>$u_{LastGridPointStagger}(t) = 0$</p>
 <p>$v_{FirstGridPointStagger} = v_{SecondGridPointStagger}$</p>
 <p>$v_{LastGridPointStagger} = v_{LastToTwoGridPointStagger}$</p>
-<p>$h_{FirstGridPointStagger} = h_{SecondGridPointStagge}$</p>
+<p>$h_{FirstGridPointStagger} = h_{SecondGridPointStagger}$</p>
 <p>$h_{LastGridPointStagger} = h_{LastToTwoGridPointStagger}$</p>
 </li>
 <li><p>And these modifications can be found in the above functions of leap_frog_stagger(), initial_conditions_stagger(), boudary_conditions_stagger(), and some new parameters: gu_stagger, gh_stagger, gv_stagger, f in the rain() function.</p>
